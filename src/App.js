@@ -1,7 +1,13 @@
 import React from 'react';
+import Navbar from "./componentes/header/Navbar"
 
-export const HolaMundo = () => {
-  return <h1>Hola Mundo</h1>
+const App = () => {
+  const userName = "Name";
+
+  return (
+    <>
+      <Navbar name={userName} />
+    </>
+  );
 };
-
 export default App;
