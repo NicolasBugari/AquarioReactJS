@@ -14,7 +14,7 @@ const Navbar = ({ name }) => {
   
         <NavCategories />
   
-        <LocalGroceryStoreIcon color="secondary" fontSize="medium" />
+        <ShoppingCartIcon color="secondary" fontSize="medium" />
       </header>
     );
   };
