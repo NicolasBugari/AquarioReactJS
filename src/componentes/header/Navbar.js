@@ -10,11 +10,11 @@ const Navbar = ({ name }) => {
         <a style={styles.imagenes} href="">
           <img style={styles.imagenes} src={logo} alt="tienda online" />
         </a>
-        <h1>Bienvenido {name}</h1>
+        <h1>Ocean World - Tienda de Peces {name}</h1>
   
         <NavCategories />
   
-        <ShoppingCartIcon color="secondary" fontSize="medium" />
+        <ShoppingCartIcon color="success" fontSize="medium" />
       </header>
     );
   };
