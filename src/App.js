@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "./componentes/header/Navbar"
 
 const App = () => {
-  const userName = "Name";
+  const userName = "";
 
   return (
     <>

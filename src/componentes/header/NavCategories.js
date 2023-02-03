@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavCategorias = () => {
+const NavCategories = () => {
   const categories = [
     { id: 1, name: "categoria 2" },
     { id: 2, name: "categoria 3" },
@@ -27,4 +27,4 @@ export const styles = {
   },
 };
 
-export default NavCategorias;
+export default NavCategories;

@@ -1,8 +1,8 @@
 import React from "react";
 import logo from "../../Imagenes/apple-touch-icon.png";
-import {style} from "./Navbar.style";
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import NavCategorias from "./NavCategorias";
+import { styles } from "./Navbar.style";
+import NavCategories from "./NavCategories";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Navbar = ({ name }) => {
     return (
