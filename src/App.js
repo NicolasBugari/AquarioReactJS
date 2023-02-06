@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from "./componentes/header/Navbar"
 import styled from 'styled-components';
+import ItemListContainer from './componentes/header/ItemListContainer/ItemListContainer';
 
 const AppStyle = styled.body`
   background: rgb(13,8,94);
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <AppStyle>
       <Navbar name={userName} />
+      <ItemListContainer/>
     </AppStyle>
   );
 };
