@@ -15,7 +15,7 @@ const App = () => {
   return (
     <AppStyle>
       <Navbar name={userName} />
-      <ItemListContainer/>
+      <ItemListContainer greeting='Bienvenidos a nuestra Tienda'/>
     </AppStyle>
   );
 };
