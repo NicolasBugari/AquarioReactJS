@@ -13,7 +13,6 @@ const NavHeader = styled.nav`
   text-decoration: none;
 `;
 
-
 const NavCategories = () => {
   const categories = [
     { id: 1, name: "Peces" },
