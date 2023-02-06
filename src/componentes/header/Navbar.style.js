@@ -13,11 +13,8 @@ const viewport = {
       paddingRight: "10%",
     },
     imagenes: {
-      height: "90%",
-    },
-    categorias: {
-      margin: 10,
-      color: "red",
+      height: "95%",
+      borderRadius: "3px",
     },
   };
   
