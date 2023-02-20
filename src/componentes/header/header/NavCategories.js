@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const NavHeader = styled.nav`
   font-size: 1.7rem;
@@ -15,18 +16,18 @@ const NavHeader = styled.nav`
 
 const NavCategories = () => {
   const categories = [
-    { id: 1, name: "Peces" },
-    { id: 2, name: "Peceras" },
-    { id: 3, name: "Plantas" },
+    { id: 1, name: "Peces", route:'categories/Peces' },
+    { id: 2, name: "Peceras", route:'categories/Peceras' },
+    { id: 3, name: "Plantas", route:'categories/Plantas' },
   ];
 
   return (
     <NavHeader>
       {categories.map((category) => {
         return (
-          <a key={category.id} style={styles.categorias} href="">
+          <NavLink key={category.id} style={styles.categorias} to={category.route}>
             {category.name}
-          </a>
+          </NavLink>
         );
       })}
     </NavHeader>

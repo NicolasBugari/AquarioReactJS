@@ -4,6 +4,9 @@ import { styles } from "./Navbar.style";
 import NavCategories from "./NavCategories";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+
 
 const AppStyle = styled.body`
   background: linear-gradient(0deg, rgba(13,8,94,1) 4%, rgba(9,121,33,1) 42%, rgba(0,212,255,1) 98%);
@@ -19,15 +22,16 @@ const AppStyle = styled.body`
 const Navbar = ({ name }) => {
     return (
       <header style={styles.container}>
-        <a style={styles.imagenes} href="">
+        <Link style={styles.imagenes} to={"/"}>
           <img style={styles.imagenes} src={logo} alt="tienda online" />
-        </a>
+        </Link>
         <AppStyle>Ocean World - Tienda de Peces {name}</AppStyle>
   
         <NavCategories />
-  
+      <Link to={"/cart"}>
         <ShoppingCartIcon color="primary" fontSize="medium" />
-      </header>
+      </Link>
+    </header>
     );
   };
   

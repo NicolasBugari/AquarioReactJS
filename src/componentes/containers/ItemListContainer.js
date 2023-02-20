@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
+import ItemList from "./ItemList"
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greeting}) => {
     <div className="greeting">

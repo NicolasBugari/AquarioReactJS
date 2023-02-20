@@ -1,7 +1,8 @@
 import React from 'react';
-import Navbar from "./componentes/header/Navbar"
+import Navbar from "./componentes/header/header/Navbar"
 import styled from 'styled-components';
-import ItemListContainer from './componentes/header/ItemListContainer/ItemListContainer';
+import ItemListContainer from './componentes/header/containers/ItemListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const AppStyle = styled.body`
   background: rgb(13,8,94);
@@ -11,12 +12,19 @@ const AppStyle = styled.body`
 
 const App = () => {
   const userName = "";
+  const greeting = "Bienvenidos a nuestra Tienda";
 
   return (
-    <AppStyle>
+    <BrowserRouter>
       <Navbar name={userName} />
-      <ItemListContainer greeting='Bienvenidos a nuestra Tienda'/>
-    </AppStyle>
+      <Routes>
+        <Route path="/" element={<ItemListContainer greeting={greeting} />}/>
+        <Route path="/categories/:name" element={<ItemListContainer greeting={greeting} />} />
+        <Route path="/product/:id" element={<ItemListContainer greeting={greeting} />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Componente404 />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 export default App;
