@@ -3,6 +3,9 @@ import Navbar from "./componentes/header/header/Navbar"
 import styled from 'styled-components';
 import ItemListContainer from './componentes/header/containers/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './componentes/containers/Cart';
+
+
 
 const AppStyle = styled.body`
   background: rgb(13,8,94);
