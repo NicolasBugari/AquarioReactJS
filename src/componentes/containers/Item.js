@@ -48,7 +48,7 @@ const Item = ({ product }) => {
 
 const styles = {
   container: {
-    width: window.innerHeight > 900 ? "25%" : "90%",
+    width: window.innerHeight > 900 ? "30%" : "80%",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
