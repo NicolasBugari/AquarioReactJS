@@ -1,27 +1,27 @@
-import { style } from "@mui/system";
+import React, {useState} from "react";
 
-const ItemDetail = ({ product }) => {
+const ItemCount = ({ onAdd, stock }) => {
+  const [count, setCount] = useState(1);
+
+  const handlerAdd = () => {
+    if (count < stock) setCount(count + 1);
+  };
+
+  const handlerSubtract = () => {
+    if (count > 1) setCount(count - 1);
+  };
+  const handlerSelect = () => {
+    if (stock > 0) onAdd(count);
+  };
+
   return (
-    <div style={styles.container}>
-      <img alt={product.title} src={product.image} style={styles.image} />
-      <div>
-        <h1>{product.title}</h1>
-        <span>{product.description}</span>
-        <h2>{product.price}</h2>
-      </div>
-    </div>
+    <>
+      <button onClick={handlerSubtract}>Restar</button>
+      <h1>{count}</h1>
+      <button onClick={handlerAdd}>Sumar</button>
+      <button onClick={handlerSelect}>Agregar al Carrito</button>
+    </>
   );
 };
 
-export default ItemDetail;
-
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: "20%",
-  },
-};
+export default ItemCount;
