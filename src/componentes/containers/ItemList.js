@@ -14,6 +14,7 @@ export default ItemList;
 
 const styles = {
   container:{
+    height: "50%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",

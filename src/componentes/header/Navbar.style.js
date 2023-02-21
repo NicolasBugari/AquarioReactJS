@@ -13,7 +13,7 @@ const viewport = {
       paddingRight: "10%",
     },
     imagenes: {
-      height: "95%",
+      height: "100%",
       borderRadius: "3px",
     },
   };

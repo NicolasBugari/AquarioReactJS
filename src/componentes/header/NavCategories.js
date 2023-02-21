@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const NavHeader = styled.nav`
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 10 px;
   margin: 10 px;
@@ -16,9 +16,10 @@ const NavHeader = styled.nav`
 
 const NavCategories = () => {
   const categories = [
-    { id: 1, name: "Peces", route:'categories/Peces' },
-    { id: 2, name: "Peceras", route:'categories/Peceras' },
-    { id: 3, name: "Plantas", route:'categories/Plantas' },
+    { id: 1, name: "electronics", route:'/categories/electronics' },
+    { id: 2, name: "jewelery", route:'/categories/jewelery'},
+    { id: 3, name: "men's clothing", route:"/categories/men's clothing"},
+    { id: 4, name: "women's clothing", route:"/categories/women's clothing"}
   ];
 
   return (
