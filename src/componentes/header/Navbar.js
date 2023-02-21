@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Imagenes/favicon-32x32.png";
+import logo from "../Imagenes/apple-touch-icon.png";
 import { styles } from "./Navbar.style";
 import NavCategories from "./NavCategories";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
