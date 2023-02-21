@@ -8,7 +8,7 @@ const viewport = {
       display: viewport.width > 900 ? "flex" : "none",
       alignItems: "center",
       justifyContent: "space-between",
-      height: 100,
+      height: 120,
       paddingLeft: "10%",
       paddingRight: "10%",
     },

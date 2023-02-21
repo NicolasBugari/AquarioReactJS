@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../Imagenes/ecommerce.jpg";
 import { styles } from "./Navbar.style";
 import NavCategories from "./NavCategories";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from "./CarWidget";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -26,10 +26,9 @@ const Navbar = ({ name }) => {
           <img style={styles.imagenes} src={logo} alt="tienda online" />
         </Link>
         <AppStyle>ecommerce coderhouse react{name}</AppStyle>
-  
         <NavCategories />
       <Link to={"/cart"}>
-        <ShoppingCartIcon color="primary" fontSize="medium" />
+        <CartWidget />
       </Link>
     </header>
     );
