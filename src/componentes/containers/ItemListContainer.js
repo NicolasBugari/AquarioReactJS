@@ -7,6 +7,7 @@ export const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
     const { name } = useParams();
+    const { id } = useParams();
     const URL = `https://fakestoreapi.com/products/category/${name}`;
 
 
