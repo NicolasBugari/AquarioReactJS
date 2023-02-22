@@ -21,13 +21,10 @@ const Navbar = ({ name }) => {
     return (
       <header style={styles.container}>
         <Link style={styles.imagenes} to={"/"}>
-          <img style={styles.imagenes} src={logo} alt="tienda online" />
-        </Link>
+          <img style={styles.imagenes} src={logo} alt="tienda online" /></Link>
         <AppStyle>Ecommerce Coderhouse React{name}</AppStyle>
         <NavCategories />
-      <Link to={"/cart"}>
-        <CartWidget />
-      </Link>
+      <Link to={"/cart"}><CartWidget /></Link>
     </header>
     );
   };

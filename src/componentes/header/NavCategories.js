@@ -12,15 +12,14 @@ const NavHeader = styled.nav`
   padding: 1rem;
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  text-decoration: none;
 `;
 
 const NavCategories = () => {
   const categories = [
-    { id: 1, name: "electronics", route:'/categories/electronics' },
-    { id: 2, name: "jewelery", route:'/categories/jewelery'},
-    { id: 3, name: "men's clothing", route:"/categories/men's clothing"},
-    { id: 4, name: "women's clothing", route:"/categories/women's clothing"}
+    { id: 1, name: "Electronics", route:'/categories/electronics' },
+    { id: 2, name: "Jewelery", route:'/categories/jewelery'},
+    { id: 3, name: "Men's Clothing", route:"/categories/men's clothing"},
+    { id: 4, name: "Women's Clothing", route:"/categories/women's clothing"}
   ];
 
   return (
@@ -39,7 +38,8 @@ const NavCategories = () => {
 export const styles = {
   categorias: {
     margin: 10,
-    color: "red",
+    color: "blue",
+    textDecoration: "none",
   },
 };
 

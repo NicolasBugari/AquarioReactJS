@@ -24,7 +24,6 @@ const prod = async () => {
   prod();
 }, [name]);
 
-
 return (
   <>
     <h1>{greeting}</h1>
