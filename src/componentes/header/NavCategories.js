@@ -3,14 +3,15 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const NavHeader = styled.nav`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 10 px;
-  margin: 10 px;
-  border: 2px solid;
+  border: 4px;
   border-radius: 3px;
-  background-color: #80D0C7;
-  background-image: linear-gradient(180deg, #80D0C7 10%, #0093E9 37%, #ffffff 100%);
+  border-color: primary;
+  border-style: double;
+  padding: 1rem;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   text-decoration: none;
 `;
 
@@ -23,7 +24,7 @@ const NavCategories = () => {
   ];
 
   return (
-    <NavHeader>
+    <NavHeader style={styled.nav}>
       {categories.map((category) => {
         return (
           <NavLink key={category.id} style={styles.categorias} to={category.route}>

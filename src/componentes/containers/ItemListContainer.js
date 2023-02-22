@@ -11,22 +11,19 @@ export const ItemListContainer = ({ greeting }) => {
 
 
 useEffect(() => {
-const getProducts = async () => {
+const prod = async () => {
     try {
-      const res = await fetch(URL);
-      const data = await res.json();
+      const resAway = await fetch(URL);
+      const data = await resAway.json();
       setProducts(data);
     } catch {
       setError(true);
     }
   };
 
-  getProducts();
+  prod();
 }, [name]);
 
-const onAdd = (count) => {
-  console.log(`el usuario selecciono ${count} `);
-};
 
 return (
   <>

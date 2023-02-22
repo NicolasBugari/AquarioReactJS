@@ -1,10 +1,8 @@
 import React from 'react';
-import Navbar from "./componentes/header/Navbar"
+import Navbar from "./componentes/header/Navbar";
 import ItemListContainer from './componentes/containers/ItemListContainer';
 import Cart from './componentes/containers/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-
 
 const App = () => {
   const userName = "";

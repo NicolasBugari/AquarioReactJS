@@ -6,17 +6,15 @@ import CartWidget from "./CarWidget";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
-
 const AppStyle = styled.body`
-  background: linear-gradient(0deg, rgba(13,8,94,1) 4%, rgba(9,121,33,1) 42%, rgba(0,212,255,1) 98%);
   font-size: 2rem;
-  background-color: #80D0C7;
-  background-image: linear-gradient(180deg, #80D0C7 10%, #0093E9 37%, #ffffff 100%);
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   border: 3px;
   border-radius: 3px;
   border-color: primary;
   border-style: double;
+  padding: 1rem;
 `;
 
 const Navbar = ({ name }) => {
@@ -25,7 +23,7 @@ const Navbar = ({ name }) => {
         <Link style={styles.imagenes} to={"/"}>
           <img style={styles.imagenes} src={logo} alt="tienda online" />
         </Link>
-        <AppStyle>ecommerce coderhouse react{name}</AppStyle>
+        <AppStyle>Ecommerce Coderhouse React{name}</AppStyle>
         <NavCategories />
       <Link to={"/cart"}>
         <CartWidget />

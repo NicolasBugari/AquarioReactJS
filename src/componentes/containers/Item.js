@@ -54,6 +54,7 @@ const styles = {
     alignItems: "center",
     margin: 20,
     backgroundColor: "rgba(249, 220, 92, 0.3)",
+    heith: "1.5rem",
   },
   title: {
     textOverflow: "ellipsis",
