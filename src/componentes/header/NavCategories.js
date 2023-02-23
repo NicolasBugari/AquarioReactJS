@@ -10,23 +10,27 @@ const NavHeader = styled.nav`
   border-color: primary;
   border-style: double;
   padding: 1rem;
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 `;
 
 const NavCategories = () => {
   const categories = [
-    { id: 1, name: "Electronics", route:'/categories/electronics' },
-    { id: 2, name: "Jewelery", route:'/categories/jewelery'},
-    { id: 3, name: "Men's Clothing", route:"/categories/men's clothing"},
-    { id: 4, name: "Women's Clothing", route:"/categories/women's clothing"}
+    { id: 1, name: "Electronics", route: "/categories/electronics" },
+    { id: 2, name: "Jewelery", route: "/categories/jewelery" },
+    { id: 3, name: "Men's Clothing", route: "/categories/men's clothing" },
+    { id: 4, name: "Women's Clothing", route: "/categories/women's clothing" },
   ];
 
   return (
     <NavHeader style={styled.nav}>
       {categories.map((category) => {
         return (
-          <NavLink key={category.id} style={styles.categorias} to={category.route}>
+          <NavLink
+            key={category.id}
+            style={styles.categorias}
+            to={category.route}
+          >
             {category.name}
           </NavLink>
         );
