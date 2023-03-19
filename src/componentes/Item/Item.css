@@ -1,0 +1,16 @@
+.container{
+    width: 310px;
+    flex-Direction: "column";
+    justify-content: "center";
+    align-items: "center";
+    margin: 20;
+    background-color: "#0093E9";
+    border: "solid";
+    border-color: "blue";
+    border-style: "double";
+};
+.title{
+    overflow: "hidden";
+    height: 100px;
+    text-overflow: "ellipsis";
+}

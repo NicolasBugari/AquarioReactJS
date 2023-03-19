@@ -30,13 +30,11 @@ const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
-    // Contador carrito
     const cartCounter = () => {
         return (
             cartList.reduce((prev, prod) => (prev + prod.quantity), 0)
         )
     }
-    // Subtotal compra
     const totalBuy = () => {
         return ( 
             cartList.reduce((prev, prod) => (prev + prod.quantity * prod.price), 0)

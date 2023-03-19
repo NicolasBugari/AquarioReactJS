@@ -9,11 +9,13 @@ import {
   CardActions,
 } from "@mui/material";
 import {Link} from 'react-router-dom'
+import './Item.css';
+
 
 const Item = ({ product }) => {
   return (
     
-    <Card sx={{ maxWidth: 345 }} style={styles.container}>
+    <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -26,7 +28,6 @@ const Item = ({ product }) => {
             gutterBottom
             variant="h5"
             component="div"
-            style={styles.title}
           >
             {product.title}
           </Typography>
@@ -46,23 +47,5 @@ const Item = ({ product }) => {
   );
 };
 
-const styles = {
-  container: {
-    width: window.innerHeight > 900 ? "30%" : "80%",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: 20,
-    backgroundColor: "#0093E9",
-    border: "solid",
-    borderColor: "blue",
-    borderStyle: "double",
-  },
-  title: {
-    textOverflow: "ellipsis",
-    overflow: "hidden",
-    height: 100,
-  },
-};
 
 export default Item;

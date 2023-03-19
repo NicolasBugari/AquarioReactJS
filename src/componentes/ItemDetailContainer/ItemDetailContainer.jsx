@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetail/ItemDetails";
+import LoadSecond from "../LoadSecond/LoadSecond";
+
 
 
 export const ItemDetailContainer = ( ) => {
+
+  const {idProduct} = useParams()  
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const db = getFirestore()
+    const queryDb = doc(db, 'items', idProduct )
+    getDoc(queryDb)
+    .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
+    .finally(() => setLoading(false))
+}, [idProduct])
 
-    const getProduct = async () => {
-      try {
-        const res = await fetch("https://fakestoreapi.com/products/1");
-        const data = await res.json();
-        setProduct(data);
-      } finally {
-        setLoading(false);
-      }
-    };
+return (
+    <div>
+        {loading
+        ?
+            <LoadSecond />
+        :
+            <ItemDetail product={product}/>
+        }
+    </div>
+)
+}
 
-    getProduct();
-  }, []);
-
-  return (
-    <>
-      {<>{loading ? <h1>Cargando...</h1> : <ItemDetail product={product} />}</>}
-    </>
-  );
-};
+export default ItemDetailContainer
