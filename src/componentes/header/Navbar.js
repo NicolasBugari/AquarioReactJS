@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../Imagenes/ecommerce.jpg";
 import { styles } from "./Navbar.style";
 import NavCategories from "./NavCategories";
-import CartWidget from "./CarWidget";
+import CartWidget from "../Cart/CarWidget";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
