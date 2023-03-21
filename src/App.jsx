@@ -4,6 +4,8 @@ import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer
 import Cart from "./componentes/Cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContext } from "./componentes/CartContext/CartContext";
+import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
+import Error404 from "./Error404";
 
 const App = () => {
   const userName = "";

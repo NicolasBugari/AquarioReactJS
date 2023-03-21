@@ -1,8 +1,8 @@
 import { css } from '@emotion/react'
 import PacmanLoader from 'react-spinners/PacmanLoader'
-import './Loader.css'
+import './Load.css'
 
-const Loader = () => {
+const Load = () => {
     const override = css`
         display: block;
         margin: 0 auto;
@@ -21,4 +21,4 @@ const Loader = () => {
     )
 }
 
-export default Loader
+export default Load

@@ -1,8 +1,8 @@
-import { css } from '@emotion/react'
-import MoonLoader from 'react-spinners/MoonLoader'
-import './LoaderSecondary.css'
+import { css } from '@emotion/react';
+import Spinner from 'react-bootstrap/Spinner';
+import './LoadSecond.css';
 
-const LoaderSecondary = () => {
+const LoadSecond = () => {
     const override = css`
         display: block;
         margin: 0 auto;
@@ -12,13 +12,13 @@ const LoaderSecondary = () => {
     return (
         <>
             <div className="loaderSecondaryContainerMobile">
-                <MoonLoader color='#dc3545' css={override} size={150} />
+                <Spinner color='#dc3545' css={override} size={150} />
             </div>
             <div className="loaderSecondaryContainer">
-                <MoonLoader color='#dc3545' css={override} size={150} />
+                <Spinner color='#dc3545' css={override} size={150} />
             </div>
         </>
     )
 }
 
-export default LoaderSecondary
+export default LoadSecond

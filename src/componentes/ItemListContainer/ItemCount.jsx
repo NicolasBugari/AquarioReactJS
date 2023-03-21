@@ -15,12 +15,14 @@ const ItemCount = ({ onAdd, stock }) => {
   };
 
   return (
-    <>
-      <button onClick={handlerSubtract}>Restar</button>
+    <div>
+      <div className="d-flex justify-content-center align-items-center">
+      <button onClick={handlerSubtract} className="btn-btn-red">Restar</button>
       <h1>{count}</h1>
-      <button onClick={handlerAdd}>Sumar</button>
-      <button onClick={handlerSelect}>Agregar al Carrito</button>
-    </>
+      <button onClick={handlerAdd} className="btn-btn-green">Sumar</button>
+      <button onClick={handlerSelect} className="btn-btn-blue">Agregar al Carrito</button>
+      </div>
+    </div>
   );
 };
 

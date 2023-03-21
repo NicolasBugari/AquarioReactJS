@@ -28,8 +28,7 @@ const prod = async () => {
 
 return (
   <>
-    <h1>{greeting}</h1>
-    {!error ? (
+    <h1>{greeting}</h1>{!error ? (
       <>
         {products.length ? (
           <ItemList products={products} />
