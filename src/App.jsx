@@ -4,7 +4,7 @@ import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./componentes/Cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartContext } from "./componentes/CartContext/CartContext";
+import CartContextProvider, { CartContext } from "./componentes/CartContext/CartContext";
 import FormBuyer from "./componentes/FormBuyer/FormBuyer";
 import Error404 from "./Error404";
 
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <CartContext>
+      <CartContextProvider>
       <Navbar name={userName} />
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="Bienvenido a Acuario Ocean World" />} />
@@ -31,7 +31,7 @@ const App = () => {
 
 
       </Routes>
-      </CartContext>
+      </CartContextProvider>
     </BrowserRouter>
   );
 };
