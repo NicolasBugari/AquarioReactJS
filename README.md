@@ -36,7 +36,7 @@ Implemente:
 - cd del proyecto.
 
   ```bash
-  cd AquiarioReactJS
+  cd AquarioReactJS
   ```
 - Instala dependencias.
 

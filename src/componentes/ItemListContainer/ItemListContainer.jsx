@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import ItemList from '../ItemList/ItemList';
+import { db } from '../../firebase/firebase';
 import Load from "../Load/Load";
 
 function ItemListContainer({greeting}) {
@@ -11,7 +12,6 @@ function ItemListContainer({greeting}) {
     const { idCategory } = useParams()
 
     useEffect(() => {
-        const db = getFirestore();
         if (idCategory) {
             const queryCollectionCategory = query(collection(db, 'products'), where('category', '==', idCategory) )
             getDocs(queryCollectionCategory)

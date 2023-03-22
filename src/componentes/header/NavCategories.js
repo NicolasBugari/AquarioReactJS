@@ -39,7 +39,7 @@ const NavCategories = () => {
 };
 
 export const styles = {
-  categorias: {
+  categories: {
     margin: 10,
     color: "blue",
     textDecoration: "none",

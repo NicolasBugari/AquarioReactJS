@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Imagenes/ecommerce.jpg";
+import logo from "../Imagenes/favicon-16x16.png";
 import { styles } from "./Navbar.style";
 import NavCategories from "./NavCategories";
 import CartWidget from "../Cart/CarWidget";

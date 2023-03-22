@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetails";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 import LoadSecond from "../LoadSecond/LoadSecond";
 
 
@@ -13,7 +14,6 @@ export const ItemDetailContainer = ( ) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const db = getFirestore()
     const queryDb = doc(db, 'products', id )
     getDoc(queryDb)
     .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
