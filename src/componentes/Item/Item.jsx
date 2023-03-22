@@ -1,51 +1,24 @@
-import React from "react";
-import Card from "@mui/material/Card";
-import {
-  CardContent,
-  CardMedia,
-  Typography,
-  Button,
-  CardActionArea,
-  CardActions,
-} from "@mui/material";
 import {Link} from 'react-router-dom'
 import './Item.css';
 
 
-const Item = ({ product }) => {
-  return (
+function Item({prod}) {
+      return (
+        <div className='col-md-4'>
+                <div className="card mt-5">
+                    <img src={prod.image} className="card-img-top card-img-products" alt={prod.title}/>
+                    <div className="card-body text-center">
+                        <h4 className="card-title">{prod.title}</h4>
+                        <h5 className="card-text">${prod.price}</h5>
+                    </div>
+                    <div className="card-footer text-center">
+                        <Link to={`/detalle/${prod.id}`}>
+                            <button className="btn btn-danger bg-gradient">Ver Más</button>
+                        </Link>
+                    </div>
+                </div>
+        </div>
+      );
+    }
     
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="50%"
-          image={product.image}
-          alt={product.title}
-        />
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-          >
-            {product.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            ${product.price}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Link to={`/product/${product.id}`}>
-          <Button size="small" color="primary">
-            Ver Detalles
-          </Button>
-          </Link>
-      </CardActions>
-    </Card>
-  );
-};
-
-
-export default Item;
+    export default Item;

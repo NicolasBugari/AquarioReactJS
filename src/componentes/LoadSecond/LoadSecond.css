@@ -1,0 +1,37 @@
+@media only screen and (min-width:0px) and (max-width:767px){
+    .loadSecondContainerMobile{
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0.5rem) !important;
+    }
+    .loadSecondContainer {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1239px){
+    .loadSecondContainerMobile{
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0.5rem) !important;
+    }
+    .loadSecondContainer {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:1240px){
+    .loadSecondContainer{
+        min-height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .loadSecondContainerMobile {
+        display: none;
+    }
+}

@@ -8,17 +8,17 @@ import LoadSecond from "../LoadSecond/LoadSecond";
 
 export const ItemDetailContainer = ( ) => {
 
-  const {idProduct} = useParams()  
+  const {id} = useParams()  
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const db = getFirestore()
-    const queryDb = doc(db, 'items', idProduct )
+    const queryDb = doc(db, 'items', id )
     getDoc(queryDb)
     .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
     .finally(() => setLoading(false))
-}, [idProduct])
+}, [id])
 
 return (
     <div>

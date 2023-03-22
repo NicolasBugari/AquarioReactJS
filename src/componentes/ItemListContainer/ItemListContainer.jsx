@@ -1,47 +1,46 @@
-import React, { useEffect, useState} from "react";
-import ItemList from "../ItemList/ItemList"
-import { useParams } from "react-router-dom";
-import { db } from "../../firebase/firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import ItemList from '../ItemList/ItemList';
+import Load from "../Load/Load";
 
-export const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([]);
-    const [error, setError] = useState(false);
-    const { name } = useParams();
-    const { id } = useParams();
-    const URL = `https://fakestoreapi.com/products/category/${name}`;
+function ItemListContainer({greeting}) {
 
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+    const { idCategory } = useParams()
 
-useEffect(() => {
-const prod = async () => {
-    try {
-      const resAway = await fetch(URL);
-      const data = await resAway.json();
-      setProducts(data);
-    } catch {
-      setError(true);
-    }
-  };
+    useEffect(() => {
+        const db = getFirestore();
+        if (idCategory) {
+            const queryCollectionCategory = query(collection(db, 'items'), where('category', '==', idCategory) )
+            getDocs(queryCollectionCategory)
+            .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
+            .finally(() => setLoading(false))
+        } else {
+            const queryCollection = collection(db, 'items')
+            getDocs(queryCollection)
+            .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
+            .finally(() => setLoading(false))
+        }  
+    }, [idCategory])
 
-  prod();
-}, [name]);
+    return (
+        <div>
+            <h2> {greeting} </h2>
+            <div>
+                <div>
+                    { loading 
+                    ? 
+                        <Load />
+                    :
+                        <ItemList products={products}/>
+                    }
+                </div>
+            </div>
+        </div>
+    )
+}
 
-return (
-  <>
-    <h1>{greeting}</h1>{!error ? (
-      <>
-        {products.length ? (
-          <ItemList products={products} />
-        ) : (
-          <h1>Cargando...</h1>
-        )}
-      </>
-    ) : (
-      <h1>Hubo un error</h1>
-    )}
-  </>
-);
-};
-
-export default ItemListContainer;
+export default ItemListContainer
 

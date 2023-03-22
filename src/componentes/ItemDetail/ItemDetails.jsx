@@ -19,10 +19,10 @@ const ItemDetail = ({ product }) => {
     <div key={product.id} className="container mt-5">
         <div className="row justify-content-center text-center align-items-center">
             <div className="col-lg-6 col-md-12 col-sm-12 pb-5">  
-                <img src={product.img} className="itemDetail-img"></img>
+                <img src={product.image} className="itemDetail-img" alt={product.title}></img>
             </div>
             <div className="col-lg-6 col-md-12 col-sm-12">
-                <h3 className="fw-bold">{product.name}</h3>
+                <h1>{product.title}</h1>
                 <h4>${product.price}</h4>
                 <p>{product.description}</p>
                 <h5>Stock: {product.stock}</h5>

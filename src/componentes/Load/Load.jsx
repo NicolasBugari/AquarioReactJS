@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import PacmanLoader from 'react-spinners/PacmanLoader'
+import { Spinner } from 'react-bootstrap';
 import './Load.css'
 
 const Load = () => {
@@ -11,11 +11,11 @@ const Load = () => {
 
     return (
         <>
-            <div className="loaderContainerMobile">
-                <PacmanLoader color='#dc3545' css={override} size={60} />
+            <div className="loadContainerMobile">
+                <Spinner color='#dc3545' css={override} size={60} />
             </div>
-            <div className="loaderContainer">
-                <PacmanLoader color='#dc3545' css={override} size={150} />
+            <div className="loadContainer">
+                <Spinner color='#dc3545' css={override} size={150} />
             </div>
         </>
     )
