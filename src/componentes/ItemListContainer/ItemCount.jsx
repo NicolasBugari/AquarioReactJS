@@ -1,29 +1,35 @@
-import React, {useState} from "react";
+import React, {useState} from 'react'
 
-const ItemCount = ({ onAdd, stock }) => {
-  const [count, setCount] = useState(1);
+function ItemCount({initial, max, onAdd}) {
 
-  const handlerAdd = () => {
-    if (count < stock) setCount(count + 1);
-  };
+    const [value, setValue] = useState(initial)
 
-  const handlerSubtract = () => {
-    if (count > 1) setCount(count - 1);
-  };
-  const handlerSelect = () => {
-    if (stock > 0) onAdd(count);
-  };
+    // Sumar, no permite pasar las unidades de stock
+    const btnPlus = () => {
+        if (value < max) {
+            setValue(value + 1);
+        } 
+    }
 
-  return (
-    <div>
-      <div className="d-flex justify-content-center align-items-center">
-      <button onClick={handlerSubtract} className="btn-btn-red">Restar</button>
-      <h1>{count}</h1>
-      <button onClick={handlerAdd} className="btn-btn-green">Sumar</button>
-      <button onClick={handlerSelect} className="btn-btn-blue">Agregar al Carrito</button>
-      </div>
-    </div>
-  );
-};
+    // Restar, no permite llegar a 0 unidades
+    const btnMinus = () => {
+        if (value > initial)  {
+            setValue(value - 1)
+        }
+    }
+    
+    return (
+        <div>
+            <div className="d-flex justify-content-center align-items-center">
+                <button onClick={btnMinus} className="btn btn-dark">-</button>
+                <h3 className="m-3">{value}</h3>
+                <button onClick={btnPlus} className="btn btn-dark">+</button>
+            </div>
+            <div className="d-flex justify-content-center">
+                <button onClick={()=> onAdd(value)} className="btn btn-danger bg-gradient mt-3">Añadir Carrito</button>
+            </div>
+        </div>
+    )
+}
 
-export default ItemCount;
+export default ItemCount

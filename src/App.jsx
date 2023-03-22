@@ -9,26 +9,23 @@ import FormBuyer from "./componentes/FormBuyer/FormBuyer";
 import Error404 from "./Error404";
 
 const App = () => {
-  const userName = "";
 
   return (
     <BrowserRouter>
       <CartContextProvider>
-      <Navbar name={userName} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="Bienvenido a Acuario Ocean World" />} />
 
-        <Route path="/categories/:name" element={<ItemListContainer />}
-        />
+        <Route path="/categories/:idCategory" element={<ItemListContainer />}/>
 
-        <Route path="/product/:id" element={<ItemDetailContainer />}/>
+        <Route path="/detalle/:idProduct" element={<ItemDetailContainer />}/>
 
         <Route path="/cart" element={<Cart />} />
 
         <Route path="/checkout" element={<FormBuyer />}/>	
 
         <Route path="*" element={<Error404 />} />
-
 
       </Routes>
       </CartContextProvider>

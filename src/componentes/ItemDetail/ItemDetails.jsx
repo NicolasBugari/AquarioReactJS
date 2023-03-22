@@ -27,9 +27,8 @@ const ItemDetail = ({ product }) => {
                 <p>{product.description}</p>
                 <h5>Stock: {product.stock}</h5>
 
-                {!goToCart 
-                ? 
-                    <ItemCount initial={1} max={product.stock} onAdd={onAdd} /> 
+                {goToCart ? (
+                    <ItemCount initial={1} max={product.stock} onAdd={onAdd} /> ) 
                 : 
                     <div className="d-flex justify-content-center">
                         <Link to={`/cart`}> 
@@ -38,6 +37,7 @@ const ItemDetail = ({ product }) => {
                         <Link to={`/`}> 
                             <button className="btn btn-danger bg-gradient ms-3 mt-3">Seguir comprando</button>
                         </Link>
+                    
                     </div>
                 }
             </div>

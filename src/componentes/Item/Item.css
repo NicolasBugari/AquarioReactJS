@@ -14,3 +14,8 @@
     height: 100px;
     text-overflow: "ellipsis";
 }
+.card-img-products{
+    width: 310px;
+    height: 275px;
+    object-fit: contain;
+}
