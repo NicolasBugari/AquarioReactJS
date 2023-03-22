@@ -4,7 +4,7 @@ import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./componentes/Cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CartContextProvider, { CartContext } from "./componentes/CartContext/CartContext";
+import CartContextProvider from "./componentes/CartContext/CartContext";
 import FormBuyer from "./componentes/FormBuyer/FormBuyer";
 import Error404 from "./Error404";
 

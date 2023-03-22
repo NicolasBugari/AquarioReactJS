@@ -16,10 +16,9 @@ const NavHeader = styled.nav`
 
 const NavCategories = () => {
   const categories = [
-    { id: 1, name: "Electronics", route: "/categories/electronics" },
-    { id: 2, name: "Jewelery", route: "/categories/jewelery" },
-    { id: 3, name: "Men's Clothing", route: "/categories/men's clothing" },
-    { id: 4, name: "Women's Clothing", route: "/categories/women's clothing" },
+    { id: 1, name: "fish", route: "/categories/fish" },
+    { id: 2, name: "plant", route: "/categories/plant" },
+    { id: 3, name: "fishbowl", route: "/categories/fishbowl" },
   ];
 
   return (
@@ -28,7 +27,7 @@ const NavCategories = () => {
         return (
           <NavLink
             key={category.id}
-            style={styles.categorias}
+            style={styles.categories}
             to={category.route}
           >
             {category.name}

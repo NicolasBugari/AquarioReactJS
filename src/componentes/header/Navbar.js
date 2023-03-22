@@ -17,12 +17,12 @@ const AppStyle = styled.body`
   padding: 1rem;
 `;
 
-const Navbar = ({ name }) => {
+const Navbar = ({ cartCount }) => {
     return (
       <header style={styles.container}>
         <Link style={styles.imagenes} to={"/"}>
           <img style={styles.imagenes} src={logo} alt="tienda online" /></Link>
-        <AppStyle>Ecommerce Coderhouse React{name}</AppStyle>
+        <AppStyle>Ecommerce Coderhouse React{cartCount}</AppStyle>
         <NavCategories />
       <Link to={"/cart"}><CartWidget /></Link>
     </header>
