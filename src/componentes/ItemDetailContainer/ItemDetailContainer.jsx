@@ -14,7 +14,7 @@ export const ItemDetailContainer = ( ) => {
 
   useEffect(() => {
     const db = getFirestore()
-    const queryDb = doc(db, 'items', id )
+    const queryDb = doc(db, 'products', id )
     getDoc(queryDb)
     .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
     .finally(() => setLoading(false))
