@@ -21,6 +21,7 @@ const ItemCount = ({ onAdd, stock = 5 }) => {
     };
   
     return (
+      
       <CardContent>
       <Typography
         gutterBottom
@@ -39,6 +40,7 @@ const ItemCount = ({ onAdd, stock = 5 }) => {
         </Button>
       </Typography>
       </CardContent>
+      
     );
   };
   

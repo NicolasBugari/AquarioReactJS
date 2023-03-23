@@ -62,7 +62,7 @@ const styles = {
     infoTextContainer: {
       display: "flex",
       flexDirection: "column",
-      color: "#2B4733",
+      color: "white",
       fontSize: "1.5rem"
     },
     infoText: {

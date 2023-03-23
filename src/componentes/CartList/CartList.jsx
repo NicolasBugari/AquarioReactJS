@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
+import { Button } from "@mui/material";
 
 const CartList = () => {
 
     const { cartList, totalBuy, removeItem, emptyCart } = useContext(CartContext)
 
     return (
-        <div className="container">
+        <div>
             <div className="row mt-4 justify-content-center text-center">
                 <div className="col-lg-3 col-sm-3"></div>
                 <h5 className="col-lg-3 col-sm-3">Nombre:</h5>
@@ -36,7 +37,7 @@ const CartList = () => {
                             <h5>${product.quantity * product.price}</h5>
                         </div>
                         <div className="col-lg-1 col-sm-1">
-                            <button className="btn btn-danger bg-gradient" onClick={() => removeItem(product.id)}>Eliminar</button>
+                        <Button variant="contained" color="error" onClick={() => removeItem(product.id)}>Eliminar</Button>
                         </div>
                         <hr></hr>
                     </div>
@@ -44,9 +45,9 @@ const CartList = () => {
                 <h3><b>Total:</b></h3>
                 <h4 className="text-center"><b>${totalBuy()}</b></h4>
                 <div className="d-flex justify-content-center mt-5">
-                    <button className="btn btn-danger bg-gradient me-3" onClick={emptyCart}>Vaciar Carrito</button>
+                <Button variant="contained" color="error">Vaciar Carrito</Button>
                     <Link to="/checkout">
-                        <button className="btn btn-danger bg-gradient ms-3">Realizar Compra</button>
+                    <Button variant="contained" color="success">Realizar Compra</Button>
                     </Link>
                 </div>
             </div>

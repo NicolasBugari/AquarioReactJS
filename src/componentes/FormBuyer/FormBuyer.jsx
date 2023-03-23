@@ -101,19 +101,19 @@ const FormBuyer = () => {
                                     onChange={handleChange}
                                 >
                                     <div className="mb-3 d-flex flex-column align-items-center">
-                                        <label className="form-label">Nombre</label>
+                                        <label className="form-label">Nombre  </label>
                                         <input type="name" className="form-control form-control--color" name="name" placeholder="Nicolas Bugari" defaultValue={formData.name} required />
                                     </div>
                                     <div className="mb-3 d-flex flex-column align-items-center">
-                                        <label className="form-label">Teléfono</label>
+                                        <label className="form-label">Teléfono  </label>
                                         <input type="number" className="form-control form-control--color" name="phone" placeholder="011xxxxxxxxx" defaultValue={formData.phone} required />
                                     </div>
                                     <div className="mb-3 d-flex flex-column align-items-center">
-                                        <label className="form-label">Email</label>
+                                        <label className="form-label">Email  </label>
                                         <input type="email" className="form-control form-control--color" name="email" placeholder="nicolasbugari@example.com" defaultValue={formData.email} required />
                                     </div>
                                     <div className="mb-3 d-flex flex-column align-items-center">
-                                        <label className="form-label">Confirmar Email</label>
+                                        <label className="form-label">Confirmar Email  </label>
                                         <input type="email" className="form-control form-control--color" name="emailConfirm" placeholder="nicolasbugari@example.com" defaultValue={formData.emailConfirm} required />
                                     </div>
                                     <button className="btn btn-danger bg-gradient d-flex justify-content-center w-50 align-self-center" 
