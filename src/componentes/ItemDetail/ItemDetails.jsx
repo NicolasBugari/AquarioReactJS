@@ -27,8 +27,8 @@ const ItemDetail = ({ product }) => {
                 <p>{product.description}</p>
                 <h5>Stock: {product.stock}</h5>
 
-                {goToCart ? (
-                    <ItemCount initial={1} max={product.stock} onAdd={onAdd} /> ) 
+                {!goToCart ? 
+                    <ItemCount initial={1} max={product.stock} onAdd={onAdd} /> 
                 : 
                     <div className="d-flex justify-content-center">
                         <Link to={`/cart`}> 

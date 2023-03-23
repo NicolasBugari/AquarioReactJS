@@ -4,7 +4,9 @@ export const CartContext = createContext([])
 
 
 const CartContextProvider = ({children}) => {
+    
     const [cartList, setCartList] = useState([])
+
     function addToCart(item){
 
         const index = cartList.findIndex(i => i.id === item.id)
