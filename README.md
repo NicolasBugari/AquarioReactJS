@@ -17,6 +17,7 @@ Implemente:
 - React-Icons
 - React-Spinner
 - Firebase
+- Material Icons
 
 ---
 

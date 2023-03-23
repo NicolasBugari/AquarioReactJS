@@ -20,12 +20,14 @@ const viewport = {
     },
     AppStyle: { 
       background: "linear-gradient(0deg, rgba(13,8,94,1) 4%, rgba(9,121,33,1) 42%, rgba(0,212,255,1) 98%)",
-      fontSize: "2rem",
+      fontSize: "3.5rem",
+      color: "#2B4733",
       backgroundColor: "#80D0C7",
       backgroundImage: "linear-gradient(180deg, #80D0C7 10%, #0093E9 37%, #ffffff 100%)",
       border: "3px",
+      padding: "1rem",
       borderRadius: "3px",
-      borderColor: "primary",
+      borderColor: "blue",
       borderStyle: "double",
     },
   };

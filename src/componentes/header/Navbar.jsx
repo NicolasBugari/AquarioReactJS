@@ -13,7 +13,9 @@ const Navbar = ({ cartCount }) => {
           <img style={styles.imagenes} src={logo} alt="tienda online" /></Link>
         <h1 style={styles.AppStyle}>Ecommerce Coderhouse React{cartCount}</h1>
         <NavCategories />
-      <Link to={"/cart"}><CartWidget /></Link>
+        <Link to={"/cart"}>
+        <CartWidget />
+      </Link>
     </header>
     );
   };

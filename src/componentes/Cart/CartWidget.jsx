@@ -9,7 +9,7 @@ export const CartWidget = () => {
 
   return (
     <div style={{display:'flex'}}>
-      <ShoppingCartIcon color="primary" fontSize="large" />
+      <ShoppingCartIcon color="#2B4733" fontSize="large" />
       {cartList.length === 0}
      
     </div>

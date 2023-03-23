@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 
 const NavCategories = () => {
   const categories = [
-    { id: 1, name: "fish", route: "/categories/fish" },
-    { id: 2, name: "plant", route: "/categories/plant" },
-    { id: 3, name: "fishbowl", route: "/categories/fishbowl" },
+    { id: 1, name: "Peces", route: "/categories/fish" },
+    { id: 2, name: "Plantas", route: "/categories/plant" },
+    { id: 3, name: "Peceras", route: "/categories/fishbowl" },
   ];
 
   return (
@@ -29,17 +29,18 @@ const NavCategories = () => {
 export const styles = {
   categories: {
     margin: 10,
-    color: "blue",
+    color: "#2B4733",
     textDecoration: "none",
+
   },
 };
 
 const NavHeader = styled.nav`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   border: 4px;
   border-radius: 3px;
-  border-color: primary;
+  border-color: blue;
   border-style: double;
   padding: 1rem;
   background-color: #0093e9;

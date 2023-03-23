@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
-import Button from 'react-bootstrap/Button';
-import './ItemCount.css';
+import Card from "@mui/material/Card";
+import { Button, 
+  CardContent,
+  Typography,
+  } from "@mui/material";
 
 const ItemCount = ({ onAdd, stock = 5 }) => {
     const [count, setCount] = useState(1);
@@ -18,18 +21,24 @@ const ItemCount = ({ onAdd, stock = 5 }) => {
     };
   
     return (
-        <div>
-          <Button variant="danger" onClick={() => handlerClickSubtrack()}>
+      <CardContent>
+      <Typography
+        gutterBottom
+        variant="h5"
+        component="div" flexDirection= "row">
+
+          <Button variant="contained" onClick={() => handlerClickSubtrack()}>
             -
           </Button>
-          <h2>{count}</h2>
-          <Button variant="success" onClick={() => handlerClickAdd()}>
+          <h3>{count}</h3>
+          <Button variant="contained" onClick={() => handlerClickAdd()}>
             +
           </Button>
-        <Button variant="info" onClick={() => onAdd(count)}>
+        <Button variant="contained" onClick={() => onAdd(count)}>
           Agregar al carrito
         </Button>
-        </div>
+      </Typography>
+      </CardContent>
     );
   };
   
