@@ -23,9 +23,25 @@ Implemente:
 
 **Se utilizo Github para compartir el proyecto**
 
+### Enlace en la parte superior del Readme
 ---
+# **Imagenes del proyecto**
 
+### 1 Home:
 
+![](./src/componentes/Imagenes/Home.PNG)
+
+### 2 Detalle de Producto:
+
+![](./src/componentes/Imagenes/Detalle.PNG)
+
+### 3 Carrito:
+
+![](./src/componentes/Imagenes/carrito.PNG)
+
+### 4 Formulario:
+
+![](./src/componentes/Imagenes/formulario.PNG)
 ---
 ## **Para iniciar el proyecto realizar los siguientes pasos**
 
