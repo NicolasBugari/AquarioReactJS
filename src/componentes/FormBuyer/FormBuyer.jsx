@@ -76,7 +76,7 @@ const FormBuyer = () => {
             {creatingOrder
             ?
                 <>      
-                    <h4 className="mt-5 text-center">Procesando su orden, espere un momento...</h4>
+                    <h4 className="mt-5 text-center">Estamos procesando su orden</h4>
                     <LoadSecond />
                 </>
             :
@@ -84,9 +84,8 @@ const FormBuyer = () => {
             ? 
                 <div className="container">
                     <div className="py-5 text-center mt-5">
-                        <h2 className="mt-5">¡Gracias por elegirnos!</h2>
-                        <h4 className="my-5">La compra se ha realizado exitosamente.</h4>
-                        <strong>El ID de tu compra es {orderId}</strong><br />
+                        <h2 className="mt-5">Gracias por su compra</h2>
+                        <strong>Orden numero ...{orderId}</strong><br />
                         <Link className="btn btn-danger bg-gradient mt-5" to={`/`}>
                             <strong>Volver al inicio</strong>
                         </Link>
@@ -103,19 +102,19 @@ const FormBuyer = () => {
                                 >
                                     <div className="mb-3 d-flex flex-column align-items-center">
                                         <label className="form-label">Nombre</label>
-                                        <input type="name" className="form-control form-control--color" name="name" placeholder="Pedrito Pedrazo" defaultValue={formData.name} required />
+                                        <input type="name" className="form-control form-control--color" name="name" placeholder="Nicolas Bugari" defaultValue={formData.name} required />
                                     </div>
                                     <div className="mb-3 d-flex flex-column align-items-center">
                                         <label className="form-label">Teléfono</label>
-                                        <input type="number" className="form-control form-control--color" name="phone" placeholder="15xxxxxxxxx" defaultValue={formData.phone} required />
+                                        <input type="number" className="form-control form-control--color" name="phone" placeholder="011xxxxxxxxx" defaultValue={formData.phone} required />
                                     </div>
                                     <div className="mb-3 d-flex flex-column align-items-center">
                                         <label className="form-label">Email</label>
-                                        <input type="email" className="form-control form-control--color" name="email" placeholder="pedrito@ejemplo.com" defaultValue={formData.email} required />
+                                        <input type="email" className="form-control form-control--color" name="email" placeholder="nicolasbugari@example.com" defaultValue={formData.email} required />
                                     </div>
                                     <div className="mb-3 d-flex flex-column align-items-center">
                                         <label className="form-label">Confirmar Email</label>
-                                        <input type="email" className="form-control form-control--color" name="emailConfirm" placeholder="pedrito@ejemplo.com" defaultValue={formData.emailConfirm} required />
+                                        <input type="email" className="form-control form-control--color" name="emailConfirm" placeholder="nicolasbugari@example.com" defaultValue={formData.emailConfirm} required />
                                     </div>
                                     <button className="btn btn-danger bg-gradient d-flex justify-content-center w-50 align-self-center" 
                                         disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cartList.length == 0}>

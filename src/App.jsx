@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContextProvider from "./componentes/CartContext/CartContext";
 import FormBuyer from "./componentes/FormBuyer/FormBuyer";
 import Error404 from "./Error404";
+import './App.css';
+
 
 const App = () => {
 

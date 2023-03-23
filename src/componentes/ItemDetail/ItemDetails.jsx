@@ -18,10 +18,10 @@ const ItemDetail = ({ product }) => {
   return (
     <div key={product.id} className="container mt-5">
         <div className="row justify-content-center text-center align-items-center">
-            <div className="col-lg-6 col-md-12 col-sm-12 pb-5">  
+            <div className="col-lg-3 col-md-6 col-sm-6 pb-5">  
                 <img src={product.image} className="itemDetail-img" alt={product.title}></img>
             </div>
-            <div className="col-lg-6 col-md-12 col-sm-12">
+            <div className="col-lg-3 col-md-6 col-sm-6">
                 <h1>{product.title}</h1>
                 <h4>${product.price}</h4>
                 <p>{product.description}</p>

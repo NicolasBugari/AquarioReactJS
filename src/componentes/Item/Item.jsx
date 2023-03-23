@@ -4,8 +4,8 @@ import './Item.css';
 
 function Item({product}) {
       return (
-        <div className='col-md-4'>
-                <div className="card mt-5">
+        <div className='container'>
+                
                     <img src={product.image} className="card-img-top card-img-products" alt={product.title}/>
                     <div className="card-body text-center">
                         <h3 className="card-title">{product.title}</h3>
@@ -17,7 +17,7 @@ function Item({product}) {
                         <Link to={`/detalle/${product.id}`}>
                             <button className="btn btn-danger bg-gradient">Ver Más</button>
                         </Link>
-                    </div>
+                    
                 </div>
         </div>
       );

@@ -3,7 +3,12 @@
     .itemDetail-img{
         width: 300px;
         height: 300px;
-        object-fit: contain;
+        object-fit: "contain";
+        justify-content: "center";
+        align-items: "center";
+        margin: 20;
+        background-color: rgb(105, 151, 136);
+        padding: 2rem;
     }
 }
 
@@ -11,7 +16,12 @@
     .itemDetail-img{
         width: 500px;
         height: 500px;
-        object-fit: contain;
+        object-fit: "contain";
+        justify-content: "center";
+        align-items: "center";
+        margin: 20;
+        background-color: rgb(105, 151, 136);
+        padding: 2rem;
     }
 }
 
@@ -19,6 +29,11 @@
     .itemDetail-img{
         width: 500px;
         height: 500px;
-        object-fit: contain;
+        object-fit: "contain";
+        justify-content: "center";
+        align-items: "center";
+        margin: 20;
+        background-color: rgb(105, 151, 136);
+        padding: 2rem;
     }
 }

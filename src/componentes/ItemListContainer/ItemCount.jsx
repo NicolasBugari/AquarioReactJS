@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import Button from 'react-bootstrap/Button';
+import './ItemCount.css';
 
 const ItemCount = ({ onAdd, stock = 5 }) => {
     const [count, setCount] = useState(1);
@@ -16,56 +18,20 @@ const ItemCount = ({ onAdd, stock = 5 }) => {
     };
   
     return (
-      <div style={styles.container}>
-        <div style={styles.containerButtons}>
-          <button style={styles.button} onClick={() => handlerClickSubtrack()}>
+        <div>
+          <Button variant="danger" onClick={() => handlerClickSubtrack()}>
             -
-          </button>
+          </Button>
           <h2>{count}</h2>
-          <button style={styles.button} onClick={() => handlerClickAdd()}>
+          <Button variant="success" onClick={() => handlerClickAdd()}>
             +
-          </button>
-        </div>
-        <button style={styles.buttonAdd} onClick={() => onAdd(count)}>
+          </Button>
+        <Button variant="info" onClick={() => onAdd(count)}>
           Agregar al carrito
-        </button>
-      </div>
+        </Button>
+        </div>
     );
   };
   
-  const styles = {
-    container: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      margin: "10px",
-    },
-    button: {
-      width: "40px",
-      height: "40px",
-      borderRadius: "50%",
-      backgroundColor: "black",
-      color: "white",
-      fontSize: "20px",
-      fontWeight: "bold",
-      margin: "10px",
-    },
-    containerButtons: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    buttonAdd: {
-      width: "30%",
-      height: "50px",
-      borderRadius: "50%",
-      backgroundColor: "green",
-      color: "white",
-      fontSize: "20px",
-      fontWeight: "bold",
-    },
-  };
-  
+
 export default ItemCount
