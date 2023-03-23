@@ -22,7 +22,7 @@ const CartList = () => {
                 {cartList.map(product => 
                     <div className="row align-items-center" key={product.id}>
                         <div className="col-lg-3 col-sm-3">
-                            <img src={product.image} style={{width:150}}></img>
+                            <img src={product.image} style={{width:150}} alt="product"></img>
                         </div>
                         <div className="col-lg-3 col-sm-3">
                             <h5>{product.title}</h5>
