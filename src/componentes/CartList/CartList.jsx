@@ -45,7 +45,7 @@ const CartList = () => {
                 <h3><b>Total:</b></h3>
                 <h4 className="text-center"><b>${totalBuy()}</b></h4>
                 <div className="d-flex justify-content-center mt-5">
-                <Button variant="contained" color="error">Vaciar Carrito</Button>
+                <Button variant="contained" color="error" onClick={emptyCart}>Vaciar Carrito</Button>
                     <Link to="/checkout">
                     <Button variant="contained" color="success">Realizar Compra</Button>
                     </Link>
