@@ -46,7 +46,7 @@ const CartList = () => {
                 <h4 className="text-center"><b>${totalBuy()}</b></h4>
                 <div className="d-flex justify-content-center mt-5">
                 <Button variant="contained" color="error" onClick={emptyCart}>Vaciar Carrito</Button>
-                    <Link to="/checkout">
+                    <Link to="/FormBuyer">
                     <Button variant="contained" color="success">Realizar Compra</Button>
                     </Link>
                 </div>

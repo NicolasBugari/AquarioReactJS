@@ -25,7 +25,7 @@ const ItemCount = ({ onAdd, stock = 5 }) => {
       <Typography
         gutterBottom
         variant="h5"
-        component="div" flexDirection= "row">
+        component="div" flexDirection= "row" display={'flex'} alignItems={"center"} justifyContent={"center"}>
 
           <Button variant="contained" onClick={() => handlerClickSubtrack()}>
             -
