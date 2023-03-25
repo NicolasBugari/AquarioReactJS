@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc} from 'firebase/firestore'
+import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc, } from 'firebase/firestore'
 import { CartContext } from '../CartContext/CartContext'
 import { Link } from 'react-router-dom'
 import LoadSecond from '../LoadSecond/LoadSecond';
@@ -54,22 +54,22 @@ const FormBuyer = () => {
             })
         })
 
-        function updateStock() {
+        function updateStock () {
             const batch = writeBatch(db)
 
-            order.items.map(el => {
+            order.items.map (el => {
                 let updateDoc = doc(db, 'products', el.id)
                 let currentStock = cartList.find(item => item.id === el.id).stock
 
                 batch.update( updateDoc, {
                     stock: currentStock - el.quantity
+                    
                 })
             })
 
             batch.commit()
         }
     }
-
     return (
         <> 
             {creatingOrder
