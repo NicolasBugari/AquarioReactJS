@@ -47,7 +47,8 @@ const CartList = () => {
                 <div className="d-flex justify-content-center mt-5">
                 <Button variant="contained" color="error" onClick={emptyCart}>Vaciar Carrito</Button>
                     <Link to="/FormBuyer">
-                    <Button variant="contained" color="success">Realizar Compra</Button>
+                    <Button variant="contained" color="success">Realizar Compra
+                    </Button>
                     </Link>
                 </div>
             </div>

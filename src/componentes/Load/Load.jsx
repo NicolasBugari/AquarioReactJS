@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { Spinner } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/Spinner';
 import './Load.css'
 
 const Load = () => {
@@ -12,10 +12,10 @@ const Load = () => {
     return (
         <>
             <div className="loadContainerMobile">
-                <Spinner color='primary' css={override} size={60} />
+                <Spinner animation='border' variant='info' css={override} size={60} />
             </div>
             <div className="loadContainer">
-                <Spinner color='primary' css={override} size={150} />
+                <Spinner animation='border' variant='info' css={override} size={150} />
             </div>
         </>
     )

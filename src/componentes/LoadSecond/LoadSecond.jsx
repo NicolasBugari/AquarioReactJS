@@ -12,10 +12,10 @@ const LoadSecond = () => {
     return (
         <>
             <div className="loadSecondContainerMobile">
-                <Spinner color='primary' css={override} size={150} />
+                <Spinner animation='border' variant='info' css={override} size={150} />
             </div>
             <div className="loadSecondContainer">
-                <Spinner color='primary' css={override} size={150} />
+                <Spinner animation='border' variant='info' css={override} size={150} />
             </div>
         </>
     )

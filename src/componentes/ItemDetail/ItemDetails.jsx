@@ -32,13 +32,12 @@ const ItemDetail = ({ product }) => {
                     <ItemCount initial={1} max={product.stock} onAdd={onAdd} /> 
                 : 
                     <div className="d-flex justify-content-center">
-                        <Link to={`/cart`}> 
-                        <Button variant="contained" color="primary">Ir al Carrito</Button>
-                        </Link>
                         <Link to={`/`}> 
                         <Button variant="contained" color="success">Seguir Comprando</Button>
                         </Link>
-                    
+                        <Link to={`/cart`}> 
+                        <Button variant="contained" color="primary">Ir al Carrito</Button>
+                        </Link>
                     </div>
                 }
             </div>

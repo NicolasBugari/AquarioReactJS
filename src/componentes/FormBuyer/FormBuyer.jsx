@@ -29,7 +29,7 @@ const FormBuyer = ({ onChange }) => {
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridName">
                 <Form.Label>Nombre</Form.Label>
-                <Form.Control type="text" name="name" placeholder="Ej: Juan Perez" defaultValue={userFormData.name} onChange={(e) => handleSubmit('name', e)} id="inputName" required />
+                <Form.Control type="text" name="name" placeholder="Ej: Nicolas Bugari" defaultValue={userFormData.name} onChange={(e) => handleSubmit('name', e)} id="inputName" required />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPhone">
