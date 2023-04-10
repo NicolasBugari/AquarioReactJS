@@ -5,8 +5,8 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailCon
 import Cart from "./componentes/Cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContextProvider from "./componentes/CartContext/CartContext";
-import FormBuyer from "./componentes/FormBuyer/FormBuyer";
 import Error404 from "./Error404.jsx";
+import FormBuyer from "./componentes/FormBuyer/FormBuyer";
 import './App.css';
 
 

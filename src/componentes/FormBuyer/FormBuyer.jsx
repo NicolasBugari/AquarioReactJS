@@ -1,7 +1,7 @@
-import { useState } from "react"
-import { Form, Row, Col } from "react-bootstrap"
-import { useAuth } from '../CartContext/AuthContext'
-import './FormBuyer.css'
+import { useState } from "react";
+import { Form, Row, Col } from "react-bootstrap";
+import { useAuth } from '../CartContext/AuthContext';
+import './FormBuyer.css';
 
 const FormBuyer = ({ onChange }) => {
   const { loggedUser } = useAuth()
@@ -55,4 +55,4 @@ const FormBuyer = ({ onChange }) => {
   )
 }
 
-export default FormBuyer
+export default FormBuyer;
