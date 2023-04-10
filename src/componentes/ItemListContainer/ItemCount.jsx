@@ -4,7 +4,7 @@ import { Button,
   Typography,
   } from "@mui/material";
 
-const ItemCount = ({ onAdd, stock = 5 }) => {
+const ItemCount = ({ onAdd, stock = 100 }) => {
     const [count, setCount] = useState(1);
   
     const handlerClickAdd = () => {
