@@ -26,7 +26,7 @@ const App = () => {
 
         <Route path="/cart" element={<Cart />} />
 
-        <Route path="/checkout" element={<FormBuyer />}/>	
+        <Route path="/FormBuyer" element={<FormBuyer />}/>	
 
         <Route path="*" element={<Error404 />} />
 

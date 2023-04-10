@@ -1,58 +1,134 @@
-import { useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
-import { useAuth } from '../CartContext/AuthContext';
-import './FormBuyer.css';
+import { useState, useContext } from 'react'
+import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc} from 'firebase/firestore'
+import { CartContext } from '../CartContext/CartContext'
+import { Link } from 'react-router-dom'
+import LoadSecond from '../LoadSecond/LoadSecond'
 
-const FormBuyer = ({ onChange }) => {
-  const { loggedUser } = useAuth()
-  const [userFormData, setUserFormData] = useState({
-    name: '',
-    phone: '',
-    email: ''
-  })
+const FormBuyer = () => {
 
-  const handleSubmit = (fieldId, e) => {
-    const value = e.target.value
-    const formData = { ...userFormData, [fieldId]: value }
-    const { name, phone, email } = formData
-    onChange((Object.keys(formData).every(key => formData[key] !== '') && formData.email === formData.email2 && formData.email.includes("@") && formData.email.includes(".") && !isNaN(parseInt(formData.phone))) ? ({ name, phone, email }) : null)
-    setUserFormData(formData)
-  }
+    const [orderId, setOrderId] = useState('')
+    const [creatingOrder, setCreatingOrder] = useState(false)
+    const [formData, setFormData] = useState({
+        name:"", email:"", emailConfirm:"", phone:""
+    })
+    const { cartList, totalBuy, emptyCart } = useContext(CartContext)
 
-  return (
-    <div className="m-5">
-      {
-        loggedUser ?
-          (<p className="p-2">Comprar como <strong>{loggedUser.email}</strong></p>)
-          :
-          (<Form className="user-form">
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridName">
-                <Form.Label>Nombre</Form.Label>
-                <Form.Control type="text" name="name" placeholder="Ej: Nicolas Bugari" defaultValue={userFormData.name} onChange={(e) => handleSubmit('name', e)} id="inputName" required />
-              </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPhone">
-                <Form.Label>Teléfono</Form.Label>
-                <Form.Control type="text" name="phone" placeholder="Ej: 1155443322" defaultValue={userFormData.phone} onChange={(e) => handleSubmit('phone', e)} id="inputPhone" required />
-              </Form.Group>
-            </Row>
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value   
+        })
+    }
 
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" name="email" placeholder="ejemplo@ejemplo.com" defaultValue={userFormData.email} onChange={(e) => handleSubmit('email', e)} id="inputEmail" required />
-              </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridEmailConfirm">
-                <Form.Label>Repetir Email</Form.Label>
-                <Form.Control type="email" name="email2" placeholder="ejemplo@ejemplo.com" defaultValue={userFormData.email2} onChange={(e) => handleSubmit('email2', e)} id="inputEmail2" required />
-              </Form.Group>
-            </Row>
-          </Form>)
-      }
-    </div >
-  )
+    const createOrder = (e) => {
+        e.preventDefault();
+        setCreatingOrder(true)
+        delete formData.emailConfirm
+        let order = {}
+        order.date = Timestamp.fromDate(new Date())
+        order.buyer = formData
+        order.total = totalBuy()
+        
+        order.items = cartList.map(cartItem => {
+            const id = cartItem.id
+            const name = cartItem.name
+            const price = cartItem.price
+            const quantity = cartItem.quantity
+            const totalPrice = cartItem.price * cartItem.quantity
+            return {id, name, price, quantity, totalPrice}
+        })
+
+
+        const db = getFirestore()
+        const orderCollection = collection(db, 'orders')
+        addDoc(orderCollection, order)
+        .then(resp => setOrderId(resp.id))
+        .catch(err => console.log(err))
+        .finally(() => { 
+            setCreatingOrder(false)
+            updateStock()
+            emptyCart()
+            setFormData({
+                name:"", email:"", emailConfirm:"", phone:""
+            })
+        })
+
+        function updateStock() {
+            const batch = writeBatch(db)
+
+            order.items.map(el => {
+                let updateDoc = doc(db, 'items', el.id)
+                let currentStock = cartList.find(item => item.id === el.id).stock
+
+                batch.update( updateDoc, {
+                    stock: currentStock - el.quantity
+                })
+            })
+
+            batch.commit()
+        }
+    }
+
+    return (
+        <> 
+            {creatingOrder
+            ?
+                <>      
+                    <h4 className="mt-5 text-center">Procesando su orden, espere un momento...</h4>
+                    <LoadSecond />
+                </>
+            :
+            orderId
+            ? 
+                <div className="container">
+                    <div className="py-5 text-center mt-5">
+                        <h2 className="mt-5">¡Gracias por elegirnos!</h2>
+                        <h4 className="my-5">La compra se ha realizado exitosamente.</h4>
+                        <strong>El ID de tu compra es {orderId}</strong><br />
+                        <Link className="btn btn-danger bg-gradient mt-5" to={`/`}>
+                            <strong>Volver a Comprar</strong>
+                        </Link>
+                    </div>
+                </div>
+            :
+                <div className="container mt-5 form__container d-flex">
+                    <div className="container align-self-center position-relative">
+                        <div className="row">
+                            <div className="col-12">
+                                <form className="d-flex flex-column"
+                                    onSubmit={createOrder}
+                                    onChange={handleChange}
+                                >
+                                    <div className="mb-3 d-flex flex-column align-items-center">
+                                        <label className="form-label">Nombre</label>
+                                        <input type="name" className="form-control form-control--color" name="name" placeholder="Nicolas Bugari" defaultValue={formData.name} required />
+                                    </div>
+                                    <div className="mb-3 d-flex flex-column align-items-center">
+                                        <label className="form-label">Teléfono</label>
+                                        <input type="number" className="form-control form-control--color" name="phone" placeholder="1122334455" defaultValue={formData.phone} required />
+                                    </div>
+                                    <div className="mb-3 d-flex flex-column align-items-center">
+                                        <label className="form-label">Email</label>
+                                        <input type="email" className="form-control form-control--color" name="email" placeholder="NicolasBugari@example.com.ar" defaultValue={formData.email} required />
+                                    </div>
+                                    <div className="mb-3 d-flex flex-column align-items-center">
+                                        <label className="form-label">Confirmar Email</label>
+                                        <input type="email" className="form-control form-control--color" name="emailConfirm" placeholder="NicolasBugari@example.com.ar" defaultValue={formData.emailConfirm} required />
+                                    </div>
+                                    <button className="btn btn-danger bg-gradient d-flex justify-content-center w-50 align-self-center" 
+                                        disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cartList.length == 0}>
+                                        Comprar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </>
+    )
 }
 
-export default FormBuyer;
+export default FormBuyer
