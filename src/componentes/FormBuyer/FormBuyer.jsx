@@ -42,7 +42,7 @@ const FormBuyer = () => {
 
 
         const db = getFirestore()
-        const orderCollection = collection(db, 'orders')
+        const orderCollection = collection(db, 'products')
         addDoc(orderCollection, order)
         .then(resp => setOrderId(resp.id))
         .catch(err => console.log(err))
