@@ -118,7 +118,7 @@ const FormBuyer = () => {
                                         <input type="email" className="form-control form-control--color" name="emailConfirm" placeholder="NicolasBugari@example.com.ar" defaultValue={formData.emailConfirm} required />
                                     </div>
                                     <button className="btn btn-danger bg-gradient d-flex justify-content-center w-50 align-self-center" 
-                                        disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cartList.length == 0}>
+                                        disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cartList.length === 0}>
                                         Comprar
                                     </button>
                                 </form>
